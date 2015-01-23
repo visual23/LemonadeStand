@@ -7,12 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AFA731B11A70BADD005817D8 /* StatsCustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA731B01A70BADD005817D8 /* StatsCustomTableViewCell.swift */; };
+		AFA731B31A70BD88005817D8 /* Stats.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA731B21A70BD88005817D8 /* Stats.swift */; };
 		AFE64E8E1A68B75C00C44249 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE64E8D1A68B75C00C44249 /* AppDelegate.swift */; };
 		AFE64E901A68B75C00C44249 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE64E8F1A68B75C00C44249 /* ViewController.swift */; };
 		AFE64E931A68B75C00C44249 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFE64E911A68B75C00C44249 /* Main.storyboard */; };
 		AFE64E951A68B75C00C44249 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFE64E941A68B75C00C44249 /* Images.xcassets */; };
-		AFE64E981A68B75C00C44249 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = AFE64E961A68B75C00C44249 /* LaunchScreen.xib */; };
 		AFE64EA41A68B75C00C44249 /* LemonadeStandTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE64EA31A68B75C00C44249 /* LemonadeStandTests.swift */; };
+		AFE64EAE1A68C5E300C44249 /* Lobster_1.3.otf in Resources */ = {isa = PBXBuildFile; fileRef = AFE64EAD1A68C4C000C44249 /* Lobster_1.3.otf */; };
+		AFE64EB01A68CC5900C44249 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE64EAF1A68CC5900C44249 /* SettingsViewController.swift */; };
+		AFE64EB21A68D78F00C44249 /* constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE64EB11A68D78F00C44249 /* constants.swift */; };
+		AFE64EB41A6950C100C44249 /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = AFE64EB31A6950C100C44249 /* Launch Screen.xib */; };
+		AFE64EB81A698B6900C44249 /* Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE64EB71A698B6900C44249 /* Resources.swift */; };
+		AFE64EBA1A698C1100C44249 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE64EB91A698C1100C44249 /* Weather.swift */; };
+		AFE64EBC1A6B428F00C44249 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE64EBB1A6B428F00C44249 /* Recipe.swift */; };
+		AFE64EBE1A6B430500C44249 /* Customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE64EBD1A6B430500C44249 /* Customer.swift */; };
+		AFE64EC01A6B571C00C44249 /* DailyStatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE64EBF1A6B571C00C44249 /* DailyStatsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,16 +36,26 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AFA731B01A70BADD005817D8 /* StatsCustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatsCustomTableViewCell.swift; sourceTree = "<group>"; };
+		AFA731B21A70BD88005817D8 /* Stats.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stats.swift; sourceTree = "<group>"; };
 		AFE64E881A68B75C00C44249 /* LemonadeStand.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LemonadeStand.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFE64E8C1A68B75C00C44249 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AFE64E8D1A68B75C00C44249 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AFE64E8F1A68B75C00C44249 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		AFE64E921A68B75C00C44249 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AFE64E941A68B75C00C44249 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		AFE64E971A68B75C00C44249 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		AFE64E9D1A68B75C00C44249 /* LemonadeStandTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LemonadeStandTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFE64EA21A68B75C00C44249 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AFE64EA31A68B75C00C44249 /* LemonadeStandTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LemonadeStandTests.swift; sourceTree = "<group>"; };
+		AFE64EAD1A68C4C000C44249 /* Lobster_1.3.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Lobster_1.3.otf; sourceTree = "<group>"; };
+		AFE64EAF1A68CC5900C44249 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		AFE64EB11A68D78F00C44249 /* constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = constants.swift; sourceTree = "<group>"; };
+		AFE64EB31A6950C100C44249 /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = "Launch Screen.xib"; path = "../Launch Screen.xib"; sourceTree = "<group>"; };
+		AFE64EB71A698B6900C44249 /* Resources.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Resources.swift; sourceTree = "<group>"; };
+		AFE64EB91A698C1100C44249 /* Weather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
+		AFE64EBB1A6B428F00C44249 /* Recipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
+		AFE64EBD1A6B430500C44249 /* Customer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Customer.swift; sourceTree = "<group>"; };
+		AFE64EBF1A6B571C00C44249 /* DailyStatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyStatsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,11 +97,19 @@
 		AFE64E8A1A68B75C00C44249 /* LemonadeStand */ = {
 			isa = PBXGroup;
 			children = (
+				AFA731B21A70BD88005817D8 /* Stats.swift */,
+				AFA731B01A70BADD005817D8 /* StatsCustomTableViewCell.swift */,
 				AFE64E8D1A68B75C00C44249 /* AppDelegate.swift */,
 				AFE64E8F1A68B75C00C44249 /* ViewController.swift */,
+				AFE64EB91A698C1100C44249 /* Weather.swift */,
+				AFE64EBB1A6B428F00C44249 /* Recipe.swift */,
+				AFE64EBD1A6B430500C44249 /* Customer.swift */,
+				AFE64EB71A698B6900C44249 /* Resources.swift */,
+				AFE64EBF1A6B571C00C44249 /* DailyStatsViewController.swift */,
+				AFE64EAF1A68CC5900C44249 /* SettingsViewController.swift */,
 				AFE64E911A68B75C00C44249 /* Main.storyboard */,
 				AFE64E941A68B75C00C44249 /* Images.xcassets */,
-				AFE64E961A68B75C00C44249 /* LaunchScreen.xib */,
+				AFE64EB31A6950C100C44249 /* Launch Screen.xib */,
 				AFE64E8B1A68B75C00C44249 /* Supporting Files */,
 			);
 			path = LemonadeStand;
@@ -90,7 +118,9 @@
 		AFE64E8B1A68B75C00C44249 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				AFE64EAD1A68C4C000C44249 /* Lobster_1.3.otf */,
 				AFE64E8C1A68B75C00C44249 /* Info.plist */,
+				AFE64EB11A68D78F00C44249 /* constants.swift */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -192,8 +222,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFE64EAE1A68C5E300C44249 /* Lobster_1.3.otf in Resources */,
+				AFE64EB41A6950C100C44249 /* Launch Screen.xib in Resources */,
 				AFE64E931A68B75C00C44249 /* Main.storyboard in Resources */,
-				AFE64E981A68B75C00C44249 /* LaunchScreen.xib in Resources */,
 				AFE64E951A68B75C00C44249 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -213,7 +244,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				AFE64E901A68B75C00C44249 /* ViewController.swift in Sources */,
+				AFA731B31A70BD88005817D8 /* Stats.swift in Sources */,
 				AFE64E8E1A68B75C00C44249 /* AppDelegate.swift in Sources */,
+				AFE64EBC1A6B428F00C44249 /* Recipe.swift in Sources */,
+				AFE64EBE1A6B430500C44249 /* Customer.swift in Sources */,
+				AFE64EB01A68CC5900C44249 /* SettingsViewController.swift in Sources */,
+				AFE64EB81A698B6900C44249 /* Resources.swift in Sources */,
+				AFE64EBA1A698C1100C44249 /* Weather.swift in Sources */,
+				AFE64EC01A6B571C00C44249 /* DailyStatsViewController.swift in Sources */,
+				AFA731B11A70BADD005817D8 /* StatsCustomTableViewCell.swift in Sources */,
+				AFE64EB21A68D78F00C44249 /* constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,14 +282,6 @@
 				AFE64E921A68B75C00C44249 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		AFE64E961A68B75C00C44249 /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				AFE64E971A68B75C00C44249 /* Base */,
-			);
-			name = LaunchScreen.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -407,6 +439,7 @@
 				AFE64EA91A68B75C00C44249 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AFE64EAA1A68B75C00C44249 /* Build configuration list for PBXNativeTarget "LemonadeStandTests" */ = {
 			isa = XCConfigurationList;
@@ -415,6 +448,7 @@
 				AFE64EAC1A68B75C00C44249 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

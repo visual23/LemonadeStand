@@ -1,25 +1,728 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="EFc-zS-Zbx">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Lobster_1.3.otf">
+            <string>Lobster1.3</string>
+            <string>Lobster1.3</string>
+            <string>Lobster1.3</string>
+            <string>Lobster1.3</string>
+            <string>Lobster1.3</string>
+            <string>Lobster1.3</string>
+            <string>Lobster1.3</string>
+            <string>Lobster1.3</string>
+            <string>Lobster1.3</string>
+            <string>Lobster1.3</string>
+            <string>Lobster1.3</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Lemonade Stand-->
+        <scene sceneID="AKu-3Q-Uaj">
+            <objects>
+                <viewController storyboardIdentifier="ViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="oUs-aZ-fGq" customClass="ViewController" customModule="LemonadeStand" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lmq-Qp-wOb"/>
+                        <viewControllerLayoutGuide type="bottom" id="4lv-2i-Gob"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="D2e-gT-Op7">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="AppBackground" translatesAutoresizingMaskIntoConstraints="NO" id="Aib-lq-q2h">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dj9-iB-HnR">
+                                <rect key="frame" x="0.0" y="80" width="375" height="90"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="HUDBackground" translatesAutoresizingMaskIntoConstraints="NO" id="aMo-VT-37P">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="IconMild" translatesAutoresizingMaskIntoConstraints="NO" id="rZq-aY-uQ1">
+                                        <rect key="frame" x="68" y="3" width="94" height="60"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="IconMoney" translatesAutoresizingMaskIntoConstraints="NO" id="BUz-lb-5ff">
+                                        <rect key="frame" x="143" y="3" width="94" height="60"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="IconLemon" translatesAutoresizingMaskIntoConstraints="NO" id="2rS-vs-3bA">
+                                        <rect key="frame" x="218" y="3" width="94" height="60"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="IconIceCube" translatesAutoresizingMaskIntoConstraints="NO" id="QBd-Jd-spw">
+                                        <rect key="frame" x="287" y="3" width="94" height="60"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="72°" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ccX-PQ-igx">
+                                        <rect key="frame" x="93" y="64" width="42" height="22"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.94117647058823528" green="0.90980392156862744" blue="0.37254901960784315" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <color key="shadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UNc-cr-W3F">
+                                        <rect key="frame" x="158" y="64" width="60" height="22"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.94117647059999998" green="0.90980392160000001" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <color key="shadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DnT-GV-MTj">
+                                        <rect key="frame" x="244" y="64" width="42" height="22"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.94117647059999998" green="0.90980392160000001" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <color key="shadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Rv-82-Y09">
+                                        <rect key="frame" x="313" y="64" width="42" height="22"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.94117647059999998" green="0.90980392160000001" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <color key="shadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="IconCalendar" translatesAutoresizingMaskIntoConstraints="NO" id="dmh-aN-Wwg">
+                                        <rect key="frame" x="-6" y="3" width="94" height="60"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MTm-pb-oWh">
+                                        <rect key="frame" x="19" y="64" width="42" height="22"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.94117647059999998" green="0.90980392160000001" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <color key="shadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="0.0" y="64" width="375" height="90"/>
+                                </variation>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dOP-S8-aUM">
+                                <rect key="frame" x="0.0" y="170" width="375" height="497"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Purchase Supplies" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BmM-sX-otY">
+                                        <rect key="frame" x="0.0" y="7" width="375" height="48"/>
+                                        <fontDescription key="fontDescription" name="Lobster1.3" family="Lobster 1.3" pointSize="25"/>
+                                        <color key="textColor" red="0.23137254900000001" green="0.10980392160000001" blue="0.054901960780000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LtH-qm-Na4">
+                                        <rect key="frame" x="0.0" y="55" width="375" height="76"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RVh-tK-yry">
+                                                <rect key="frame" x="0.0" y="0.0" width="187" height="54"/>
+                                                <subviews>
+                                                    <view alpha="0.11" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JMq-pB-4X4">
+                                                        <rect key="frame" x="0.0" y="0.0" width="186" height="54"/>
+                                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </view>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vqv-2X-107">
+                                                        <rect key="frame" x="31" y="10" width="22" height="37"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="31"/>
+                                                        <state key="normal" image="IconMinus">
+                                                            <color key="titleColor" red="0.24313725490196078" green="0.086274509803921567" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="storeLemonMinusButtonPressed:" destination="oUs-aZ-fGq" eventType="touchUpInside" id="GTT-B8-Cwa"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FUI-Aw-cFn">
+                                                        <rect key="frame" x="131" y="10" width="27" height="37"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="31"/>
+                                                        <state key="normal" image="IconPlus">
+                                                            <color key="titleColor" red="0.24313725489999999" green="0.086274509799999996" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="storeLemonPlusButtonPressed:" destination="oUs-aZ-fGq" eventType="touchUpInside" id="yf8-ry-fia"/>
+                                                        </connections>
+                                                    </button>
+                                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="IconLemonSolid" translatesAutoresizingMaskIntoConstraints="NO" id="Ysr-ds-gpU">
+                                                        <rect key="frame" x="56" y="0.0" width="76" height="54"/>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0rt-ff-CVv">
+                                                        <rect key="frame" x="73" y="16" width="42" height="22"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                        <color key="textColor" red="0.94117647059999998" green="0.90980392160000001" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <color key="shadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </view>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ade-9I-0Rw">
+                                                <rect key="frame" x="188" y="0.0" width="187" height="54"/>
+                                                <subviews>
+                                                    <view alpha="0.10999999940395355" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Q8-sn-gmc">
+                                                        <rect key="frame" x="1" y="0.0" width="186" height="54"/>
+                                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </view>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zpi-ij-Cas">
+                                                        <rect key="frame" x="31" y="10" width="22" height="37"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="31"/>
+                                                        <state key="normal" image="IconMinus">
+                                                            <color key="titleColor" red="0.24313725489999999" green="0.086274509799999996" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="storeIceCubesMinusButtonPressed:" destination="oUs-aZ-fGq" eventType="touchUpInside" id="DkO-6c-WDb"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tqz-YY-R0X">
+                                                        <rect key="frame" x="131" y="10" width="27" height="37"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="31"/>
+                                                        <state key="normal" image="IconPlus">
+                                                            <color key="titleColor" red="0.24313725489999999" green="0.086274509799999996" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="storeIceCubesPlusButtonPressed:" destination="oUs-aZ-fGq" eventType="touchUpInside" id="xWI-3a-6t7"/>
+                                                        </connections>
+                                                    </button>
+                                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="IconIceCubesSolid" translatesAutoresizingMaskIntoConstraints="NO" id="9Wm-Hp-k6X">
+                                                        <rect key="frame" x="56" y="1" width="76" height="54"/>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qfR-Ev-BMA">
+                                                        <rect key="frame" x="75" y="16" width="42" height="22"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                        <color key="textColor" red="0.94117647059999998" green="0.90980392160000001" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <color key="shadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </view>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ao1-Zu-gFf">
+                                                <rect key="frame" x="0.0" y="54" width="186" height="22"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Lemons: $2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Wx-FD-M8R">
+                                                        <rect key="frame" x="0.0" y="0.0" width="186" height="21"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                        <color key="textColor" red="0.94117647059999998" green="0.90980392160000001" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <color key="shadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" red="0.1803921568627451" green="0.062745098039215685" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            </view>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jBv-4K-boH">
+                                                <rect key="frame" x="189" y="54" width="186" height="22"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ice Cubes: $1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1sE-Mm-qgX">
+                                                        <rect key="frame" x="0.0" y="0.0" width="186" height="21"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                        <color key="textColor" red="0.94117647059999998" green="0.90980392160000001" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <color key="shadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" red="0.18039215689999999" green="0.062745098040000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            </view>
+                                        </subviews>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mix Your Lemonade" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lb3-jL-kba">
+                                        <rect key="frame" x="0.0" y="138" width="375" height="48"/>
+                                        <fontDescription key="fontDescription" name="Lobster1.3" family="Lobster 1.3" pointSize="25"/>
+                                        <color key="textColor" red="0.23137254900000001" green="0.10980392160000001" blue="0.054901960780000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Do your customers prefer more ice or more lemons today?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oGq-8M-hpI">
+                                        <rect key="frame" x="37" y="170" width="300" height="61"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GBX-iY-qxh">
+                                        <rect key="frame" x="0.0" y="232" width="375" height="54"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oLo-sT-xoh">
+                                                <rect key="frame" x="0.0" y="0.0" width="187" height="54"/>
+                                                <subviews>
+                                                    <view alpha="0.10999999940395355" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R4e-bP-ANa">
+                                                        <rect key="frame" x="0.0" y="0.0" width="186" height="54"/>
+                                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </view>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6RX-1C-rOS">
+                                                        <rect key="frame" x="31" y="10" width="22" height="37"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="31"/>
+                                                        <state key="normal" image="IconMinus">
+                                                            <color key="titleColor" red="0.24313725489999999" green="0.086274509799999996" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="mixLemonMinusButtonPressed:" destination="oUs-aZ-fGq" eventType="touchUpInside" id="iYA-QO-pNL"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xlS-Io-cdd">
+                                                        <rect key="frame" x="131" y="10" width="27" height="37"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="31"/>
+                                                        <state key="normal" image="IconPlus">
+                                                            <color key="titleColor" red="0.24313725489999999" green="0.086274509799999996" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="mixLemonPlusButtonPressed:" destination="oUs-aZ-fGq" eventType="touchUpInside" id="OYi-WJ-Caz"/>
+                                                        </connections>
+                                                    </button>
+                                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="IconLemonSolid" translatesAutoresizingMaskIntoConstraints="NO" id="arl-Y4-285">
+                                                        <rect key="frame" x="56" y="0.0" width="76" height="54"/>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DHK-EV-fD6">
+                                                        <rect key="frame" x="73" y="16" width="42" height="22"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                        <color key="textColor" red="0.94117647059999998" green="0.90980392160000001" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <color key="shadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </view>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oRc-7B-pSn">
+                                                <rect key="frame" x="188" y="0.0" width="187" height="54"/>
+                                                <subviews>
+                                                    <view alpha="0.10999999940395355" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2gO-fI-cxp">
+                                                        <rect key="frame" x="1" y="0.0" width="186" height="54"/>
+                                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </view>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jxV-Vq-9FH">
+                                                        <rect key="frame" x="31" y="10" width="22" height="37"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="31"/>
+                                                        <state key="normal" image="IconMinus">
+                                                            <color key="titleColor" red="0.24313725489999999" green="0.086274509799999996" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="mixIceCubesMinusButtonPressed:" destination="oUs-aZ-fGq" eventType="touchUpInside" id="MKJ-Fc-ROa"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ah-uO-8jL">
+                                                        <rect key="frame" x="131" y="10" width="27" height="37"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="31"/>
+                                                        <state key="normal" image="IconPlus">
+                                                            <color key="titleColor" red="0.24313725489999999" green="0.086274509799999996" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="mixIceCubesPlusButtonPressed:" destination="oUs-aZ-fGq" eventType="touchUpInside" id="Y4X-49-1S6"/>
+                                                        </connections>
+                                                    </button>
+                                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="IconIceCubesSolid" translatesAutoresizingMaskIntoConstraints="NO" id="ZA8-B0-e7b">
+                                                        <rect key="frame" x="56" y="1" width="76" height="54"/>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0LP-4J-hXZ">
+                                                        <rect key="frame" x="75" y="16" width="42" height="22"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                        <color key="textColor" red="0.94117647059999998" green="0.90980392160000001" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <color key="shadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </view>
+                                        </subviews>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sell Your Brew" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Krq-AK-RG0">
+                                        <rect key="frame" x="0.0" y="294" width="375" height="48"/>
+                                        <fontDescription key="fontDescription" name="Lobster1.3" family="Lobster 1.3" pointSize="25"/>
+                                        <color key="textColor" red="0.23137254900000001" green="0.10980392160000001" blue="0.054901960780000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ll-Cx-AjM">
+                                        <rect key="frame" x="16" y="336" width="344" height="61"/>
+                                        <string key="text">At the end of the day you will either make or lose money. If you don’t have enough money to buy new inventory then you lose the game.</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view alpha="0.10999999940395355" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q7n-ZS-VEi">
+                                        <rect key="frame" x="0.0" y="420" width="375" height="54"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="413" width="375" height="84"/>
+                                        </variation>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Guc-kR-5Me">
+                                        <rect key="frame" x="85" y="430" width="205" height="34"/>
+                                        <color key="backgroundColor" red="0.24313725489999999" green="0.086274509799999996" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="Lobster1.3" family="Lobster 1.3" pointSize="22"/>
+                                        <state key="normal" title="Start Selling!">
+                                            <color key="titleColor" red="0.94117647059999998" green="0.90980392160000001" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="16" y="434" width="344" height="42"/>
+                                        </variation>
+                                        <connections>
+                                            <segue destination="vwn-hq-qlF" kind="presentation" identifier="segueDailyStats" id="rv3-V2-QdI"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="0.0" y="154" width="375" height="497"/>
+                                </variation>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="dj9-iB-HnR" firstAttribute="top" secondItem="lmq-Qp-wOb" secondAttribute="bottom" id="1Ih-wp-PIi"/>
+                            <constraint firstItem="dOP-S8-aUM" firstAttribute="top" secondItem="lmq-Qp-wOb" secondAttribute="bottom" constant="90" id="H4d-fu-aRN"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="1Ih-wp-PIi"/>
+                                <exclude reference="H4d-fu-aRN"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="1Ih-wp-PIi"/>
+                                <include reference="H4d-fu-aRN"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" title="Lemonade Stand" id="HOa-QJ-lrg">
+                        <barButtonItem key="rightBarButtonItem" image="IconSettings" id="gkt-5a-e57">
+                            <color key="tintColor" red="0.1803921568627451" green="0.062745098039215685" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <segue destination="BYZ-38-t0r" kind="show" identifier="segueSettings" id="OJQ-zV-KKx"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="daylabel" destination="MTm-pb-oWh" id="Cmo-6H-awg"/>
+                        <outlet property="iceCubesLabel" destination="4Rv-82-Y09" id="fPk-vh-GpG"/>
+                        <outlet property="lemonImage" destination="2rS-vs-3bA" id="AFg-vF-YzQ"/>
+                        <outlet property="lemonsLabel" destination="DnT-GV-MTj" id="bdw-0n-4yt"/>
+                        <outlet property="mixIceCubesMinusButton" destination="jxV-Vq-9FH" id="Z5Y-cD-0aS"/>
+                        <outlet property="mixIceCubesPlusButton" destination="3ah-uO-8jL" id="sZy-zk-nQG"/>
+                        <outlet property="mixIceCubesSelected" destination="0LP-4J-hXZ" id="Tqx-tI-g4u"/>
+                        <outlet property="mixIconIceCubes" destination="ZA8-B0-e7b" id="IfR-fZ-ZMd"/>
+                        <outlet property="mixIconLemon" destination="arl-Y4-285" id="gsM-13-4Gu"/>
+                        <outlet property="mixLemonsMinusButton" destination="6RX-1C-rOS" id="7jM-ht-SP5"/>
+                        <outlet property="mixLemonsPlusButton" destination="xlS-Io-cdd" id="Yev-nN-7db"/>
+                        <outlet property="mixLemonsSelected" destination="DHK-EV-fD6" id="I4r-8x-OOu"/>
+                        <outlet property="moneyLabel" destination="UNc-cr-W3F" id="dRR-Ib-ERa"/>
+                        <outlet property="startDayButton" destination="Guc-kR-5Me" id="wU5-Dp-6JG"/>
+                        <outlet property="storeIceCubesMinusButton" destination="zpi-ij-Cas" id="GfC-PZ-eLk"/>
+                        <outlet property="storeIceCubesPlusButton" destination="tqz-YY-R0X" id="PhJ-Y4-yzF"/>
+                        <outlet property="storeIceCubesSelected" destination="qfR-Ev-BMA" id="gZv-Gn-hb9"/>
+                        <outlet property="storeIconIceCubes" destination="9Wm-Hp-k6X" id="cgQ-2d-KQp"/>
+                        <outlet property="storeIconLemon" destination="Ysr-ds-gpU" id="KsQ-FA-y1L"/>
+                        <outlet property="storeLemonsMinusButton" destination="Vqv-2X-107" id="xdM-de-gf1"/>
+                        <outlet property="storeLemonsPlusButton" destination="FUI-Aw-cFn" id="wTY-BW-pkB"/>
+                        <outlet property="storeLemonsSelected" destination="0rt-ff-CVv" id="ery-0P-pA3"/>
+                        <outlet property="weatherImage" destination="rZq-aY-uQ1" id="7e4-95-woF"/>
+                        <outlet property="weatherLabel" destination="ccX-PQ-igx" id="RC1-nG-8hT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zd1-38-rGE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="771" y="198.75"/>
+        </scene>
+        <!--Daliy Stats-->
+        <scene sceneID="afr-MH-fZO">
+            <objects>
+                <viewController storyboardIdentifier="DailyStatsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="dke-WD-vhr" customClass="DailyStatsViewController" customModule="LemonadeStand" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mHX-R5-Elv"/>
+                        <viewControllerLayoutGuide type="bottom" id="5gZ-TP-PDJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rnA-Za-EaE">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="AppBackground" translatesAutoresizingMaskIntoConstraints="NO" id="1lu-NQ-ys9">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="0.0" width="400" height="800"/>
+                                </variation>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MKU-do-c7M">
+                                <rect key="frame" x="85" y="585" width="205" height="34"/>
+                                <color key="backgroundColor" red="0.24313725489999999" green="0.086274509799999996" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Lobster1.3" family="Lobster 1.3" pointSize="22"/>
+                                <state key="normal" title="Start A New Day">
+                                    <color key="titleColor" red="0.94117647059999998" green="0.90980392160000001" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="16" y="708" width="368" height="34"/>
+                                </variation>
+                                <connections>
+                                    <action selector="returnToGameButtonPressed:" destination="dke-WD-vhr" eventType="touchUpInside" id="Npp-ea-UE2"/>
+                                    <segue destination="jxt-xF-RrS" kind="unwind" unwindAction="unwindSegue:" id="ZgS-9l-2No"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="InteriorBar" translatesAutoresizingMaskIntoConstraints="NO" id="Ajf-fk-6dD">
+                                <rect key="frame" x="0.0" y="80" width="375" height="30"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="64" width="400" height="30"/>
+                                </variation>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" sectionIndexMinimumDisplayRowCount="7" allowsSelection="NO" rowHeight="62" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="ATY-Ws-PEY">
+                                <rect key="frame" x="0.0" y="110" width="375" height="557"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="separatorColor" red="0.82352941180000006" green="0.79215686269999996" blue="0.3294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" restorationIdentifier="Cell" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="Vs6-e6-cy1" customClass="StatsCustomTableViewCell" customModule="LemonadeStand" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Vs6-e6-cy1" id="xpZ-95-uLA">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="C09-ah-cWY">
+                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="60"/>
+                                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.11" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="akl-PP-M8S">
+                                                    <rect key="frame" x="114" y="7" width="244" height="48"/>
+                                                    <fontDescription key="fontDescription" name="Lobster1.3" family="Lobster 1.3" pointSize="25"/>
+                                                    <color key="textColor" red="0.23137254900000001" green="0.10980392160000001" blue="0.054901960780000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7KX-Hb-BVa">
+                                                    <rect key="frame" x="0.0" y="60" width="375" height="2"/>
+                                                    <color key="backgroundColor" red="0.82352941180000006" green="0.79215686269999996" blue="0.3294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="0.0"/>
+                                                    </variation>
+                                                </view>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="statsIconImage" destination="C09-ah-cWY" id="SEe-eK-hlg"/>
+                                            <outlet property="statsLabel" destination="akl-PP-M8S" id="kpp-8r-iA9"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="110" width="375" height="600"/>
+                                </variation>
+                                <variation key="widthClass=regular" ambiguous="YES">
+                                    <rect key="frame" x="0.0" y="0.0" width="0.0" height="0.0"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="94" width="400" height="542"/>
+                                </variation>
+                                <connections>
+                                    <outlet property="dataSource" destination="dke-WD-vhr" id="DRJ-Tp-lLx"/>
+                                    <outlet property="delegate" destination="dke-WD-vhr" id="O0z-H5-GIZ"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="MKU-do-c7M" secondAttribute="centerX" id="AyV-SY-3gA"/>
+                            <constraint firstItem="5gZ-TP-PDJ" firstAttribute="top" secondItem="MKU-do-c7M" secondAttribute="bottom" constant="58" id="YgO-gJ-KRk"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="MKU-do-c7M"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="AyV-SY-3gA"/>
+                                <exclude reference="YgO-gJ-KRk"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="MKU-do-c7M"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="AyV-SY-3gA"/>
+                                <include reference="YgO-gJ-KRk"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" title="Daliy Stats" id="kJw-dg-BsC"/>
+                    <connections>
+                        <outlet property="returnToGameButton" destination="MKU-do-c7M" id="Peh-4v-lZJ"/>
+                        <outlet property="statsTableView" destination="ATY-Ws-PEY" id="pSq-xC-4vy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="D5i-mh-jxg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="jxt-xF-RrS" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2433" y="891"/>
+        </scene>
+        <!--Settings-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SettingsViewController" id="BYZ-38-t0r" customClass="SettingsViewController" customModule="LemonadeStand" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                        <viewControllerLayoutGuide type="top" id="Sbd-Gl-QQR"/>
+                        <viewControllerLayoutGuide type="bottom" id="E7S-tz-p2W"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="AppBackground" translatesAutoresizingMaskIntoConstraints="NO" id="jqR-et-Fn4">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="InteriorBar" translatesAutoresizingMaskIntoConstraints="NO" id="9L7-Q0-GRJ">
+                                <rect key="frame" x="0.0" y="80" width="375" height="30"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="64" width="375" height="30"/>
+                                </variation>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Settings" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pxc-fn-zxi">
+                                <rect key="frame" x="0.0" y="19" width="375" height="48"/>
+                                <fontDescription key="fontDescription" name="Lobster1.3" family="Lobster 1.3" pointSize="33"/>
+                                <color key="textColor" red="0.23137254900000001" green="0.10980392160000001" blue="0.054901960780000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="svO-ZL-93O">
+                                <rect key="frame" x="0.0" y="110" width="375" height="77"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cBN-QX-yjr">
+                                        <rect key="frame" x="0.0" y="75" width="375" height="2"/>
+                                        <color key="backgroundColor" red="0.82352941180000006" green="0.79215686269999996" blue="0.3294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="x5N-D0-DbD">
+                                        <rect key="frame" x="302" y="23" width="51" height="31"/>
+                                        <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.11" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="onTintColor" red="0.18039215689999999" green="0.062745098040000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="thumbTintColor" red="0.87450980389999999" green="0.85490196080000003" blue="0.35686274509999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="302" y="23" width="51" height="31"/>
+                                        </variation>
+                                    </switch>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Except Tips:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1VQ-0o-bnm">
+                                        <rect key="frame" x="19" y="15" width="244" height="48"/>
+                                        <fontDescription key="fontDescription" name="Lobster1.3" family="Lobster 1.3" pointSize="25"/>
+                                        <color key="textColor" red="0.23137254900000001" green="0.10980392160000001" blue="0.054901960780000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="94" width="375" height="77"/>
+                                </variation>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2jW-Qd-I6q">
+                                <rect key="frame" x="0.0" y="187" width="375" height="77"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VMh-nj-nMh">
+                                        <rect key="frame" x="0.0" y="75" width="375" height="2"/>
+                                        <color key="backgroundColor" red="0.82352941180000006" green="0.79215686269999996" blue="0.3294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Price Per Cup:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dEW-uF-Yrj">
+                                        <rect key="frame" x="19" y="15" width="244" height="48"/>
+                                        <fontDescription key="fontDescription" name="Lobster1.3" family="Lobster 1.3" pointSize="25"/>
+                                        <color key="textColor" red="0.23137254900000001" green="0.10980392160000001" blue="0.054901960780000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minimumValue="1" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="3Gm-BW-qHB">
+                                        <rect key="frame" x="256" y="23" width="94" height="29"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.11" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" red="0.23137254900000001" green="0.10980392160000001" blue="0.054901960780000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="256" y="22" width="94" height="29"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="cupPriceStepperPressed:" destination="BYZ-38-t0r" eventType="valueChanged" id="8Nj-kW-eZu"/>
+                                        </connections>
+                                    </stepper>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iYM-rQ-w2H">
+                                        <rect key="frame" x="165" y="15" width="70" height="48"/>
+                                        <fontDescription key="fontDescription" name="Lobster1.3" family="Lobster 1.3" pointSize="25"/>
+                                        <color key="textColor" red="0.23137254900000001" green="0.10980392160000001" blue="0.054901960780000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="171" width="375" height="77"/>
+                                </variation>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W5W-ce-V8E">
+                                <rect key="frame" x="63" y="317" width="248" height="34"/>
+                                <color key="backgroundColor" red="0.24313725489999999" green="0.086274509799999996" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Lobster1.3" family="Lobster 1.3" pointSize="22"/>
+                                <state key="normal" title="Restart Game">
+                                    <color key="titleColor" red="0.94117647059999998" green="0.90980392160000001" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="16" y="301" width="338" height="42"/>
+                                </variation>
+                                <connections>
+                                    <action selector="resetGameButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZsS-B1-0Bw"/>
+                                    <action selector="startDayButtonPressed:" destination="oUs-aZ-fGq" eventType="touchUpInside" id="zCl-xq-iTJ"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Settings" id="59s-ey-Jk5"/>
+                    <connections>
+                        <outlet property="cupPriceLabel" destination="iYM-rQ-w2H" id="7IT-Li-zEv"/>
+                        <outlet property="cupPriceStepper" destination="3Gm-BW-qHB" id="PvA-7G-E8L"/>
+                        <outlet property="resetGameButton" destination="W5W-ce-V8E" id="7Le-bE-dJj"/>
+                        <outlet property="tipsSwitch" destination="x5N-D0-DbD" id="As8-bC-kOe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1515" y="198.75"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="xHS-tt-WgR">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="EFc-zS-Zbx" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="giW-Id-cxP">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.94117647059999998" green="0.90980392160000001" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="Lobster1.3" family="Lobster 1.3" pointSize="19"/>
+                            <color key="textColor" red="0.23137254900000001" green="0.10980392160000001" blue="0.054901960780000002" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="4IK-JP-Ntc">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="oUs-aZ-fGq" kind="relationship" relationship="rootViewController" id="8TW-FJ-6oD"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Cv-lo-hdv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3" y="198.75"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="kdD-iE-ycU">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vwn-hq-qlF" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="J8x-6M-CrA">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.94117647059999998" green="0.90980392160000001" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="beZ-Np-I6X">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="dke-WD-vhr" kind="relationship" relationship="rootViewController" id="euw-dO-JYj"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DUy-7i-4do" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1689" y="891"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="AppBackground" width="375" height="667"/>
+        <image name="HUDBackground" width="378" height="91"/>
+        <image name="IconCalendar" width="48" height="48"/>
+        <image name="IconIceCube" width="53" height="47"/>
+        <image name="IconIceCubesSolid" width="38" height="33"/>
+        <image name="IconLemon" width="49" height="37"/>
+        <image name="IconLemonSolid" width="46" height="33"/>
+        <image name="IconMild" width="49" height="49"/>
+        <image name="IconMinus" width="22" height="4"/>
+        <image name="IconMoney" width="49" height="46"/>
+        <image name="IconPlus" width="22" height="22"/>
+        <image name="IconSettings" width="26" height="26"/>
+        <image name="InteriorBar" width="375" height="30"/>
+    </resources>
 </document>
