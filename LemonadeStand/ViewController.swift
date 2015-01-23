@@ -102,10 +102,6 @@ class ViewController: UIViewController, DailyStatsViewControllerDelegate, Settin
         
         var nav = self.navigationController?.navigationBar
         nav?.tintColor = brownColor
-        
-        /*let backButton = UIBarButtonItem(title: "< Back", style: UIBarButtonItemStyle.Plain, target: self, action: nil)
-        backButton.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Chalkduster", size: 20)!], forState: UIControlState.Normal)
-        navigationItem.backBarButtonItem = backButton*/
 
         let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 158, height: 26))
         imageView.contentMode = .ScaleAspectFit
