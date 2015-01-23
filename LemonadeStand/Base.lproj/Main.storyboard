@@ -16,7 +16,6 @@
             <string>Lobster1.3</string>
             <string>Lobster1.3</string>
             <string>Lobster1.3</string>
-            <string>Lobster1.3</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -32,9 +31,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="AppBackground" translatesAutoresizingMaskIntoConstraints="NO" id="Aib-lq-q2h">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                            </imageView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dj9-iB-HnR">
                                 <rect key="frame" x="0.0" y="80" width="375" height="90"/>
                                 <subviews>
@@ -94,7 +90,7 @@
                                 </subviews>
                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="64" width="375" height="90"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
                                 </variation>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dOP-S8-aUM">
@@ -355,11 +351,11 @@
                                     </button>
                                 </subviews>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="154" width="375" height="497"/>
+                                    <rect key="frame" x="0.0" y="90" width="375" height="497"/>
                                 </variation>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.94117647059999998" green="0.90980392160000001" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Lemonade Stand" id="HOa-QJ-lrg">
                         <barButtonItem key="rightBarButtonItem" image="IconSettings" id="gkt-5a-e57">
@@ -545,7 +541,8 @@
                                         <exclude reference="JHo-VW-Pb4"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="16" y="580" width="368" height="42"/>
                                     <mask key="constraints">
                                         <include reference="JHo-VW-Pb4"/>
                                     </mask>
@@ -560,10 +557,13 @@
                         <constraints>
                             <constraint firstItem="ATY-Ws-PEY" firstAttribute="top" secondItem="mHX-R5-Elv" secondAttribute="bottom" constant="30" id="1Gp-zT-cxi"/>
                             <constraint firstItem="MKU-do-c7M" firstAttribute="leading" secondItem="rnA-Za-EaE" secondAttribute="leadingMargin" id="29J-wf-Nuy"/>
+                            <constraint firstItem="Ajf-fk-6dD" firstAttribute="leading" secondItem="rnA-Za-EaE" secondAttribute="leadingMargin" constant="-16" id="DVQ-cz-NwB"/>
                             <constraint firstItem="ATY-Ws-PEY" firstAttribute="leading" secondItem="Ajf-fk-6dD" secondAttribute="leading" id="Ggm-QF-AhQ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Ajf-fk-6dD" secondAttribute="trailing" constant="-16" id="HBd-nN-LMr"/>
                             <constraint firstItem="ATY-Ws-PEY" firstAttribute="centerX" secondItem="MKU-do-c7M" secondAttribute="centerX" id="ICM-ge-Dg6"/>
                             <constraint firstItem="Ajf-fk-6dD" firstAttribute="top" secondItem="mHX-R5-Elv" secondAttribute="bottom" id="MTb-Z0-hcX"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ATY-Ws-PEY" secondAttribute="trailing" id="R1E-TE-wpS"/>
+                            <constraint firstItem="Ajf-fk-6dD" firstAttribute="top" secondItem="mHX-R5-Elv" secondAttribute="bottom" id="aE7-LU-SYu"/>
                             <constraint firstItem="MKU-do-c7M" firstAttribute="trailing" secondItem="rnA-Za-EaE" secondAttribute="trailingMargin" id="mdV-rm-nNf"/>
                             <constraint firstAttribute="width" secondItem="ATY-Ws-PEY" secondAttribute="width" id="pcg-cL-jFo"/>
                             <constraint firstItem="ATY-Ws-PEY" firstAttribute="trailing" secondItem="Ajf-fk-6dD" secondAttribute="trailing" id="u0B-En-ExS"/>
@@ -574,7 +574,10 @@
                                 <exclude reference="MKU-do-c7M"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="DVQ-cz-NwB"/>
+                                <exclude reference="HBd-nN-LMr"/>
                                 <exclude reference="MTb-Z0-hcX"/>
+                                <exclude reference="aE7-LU-SYu"/>
                                 <exclude reference="1Gp-zT-cxi"/>
                                 <exclude reference="Ggm-QF-AhQ"/>
                                 <exclude reference="ICM-ge-Dg6"/>
@@ -591,13 +594,16 @@
                                 <include reference="MKU-do-c7M"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="MTb-Z0-hcX"/>
+                                <include reference="DVQ-cz-NwB"/>
+                                <include reference="HBd-nN-LMr"/>
+                                <exclude reference="MTb-Z0-hcX"/>
+                                <include reference="aE7-LU-SYu"/>
                                 <include reference="1Gp-zT-cxi"/>
-                                <include reference="Ggm-QF-AhQ"/>
+                                <exclude reference="Ggm-QF-AhQ"/>
                                 <include reference="ICM-ge-Dg6"/>
                                 <exclude reference="R1E-TE-wpS"/>
                                 <include reference="pcg-cL-jFo"/>
-                                <include reference="u0B-En-ExS"/>
+                                <exclude reference="u0B-En-ExS"/>
                                 <include reference="29J-wf-Nuy"/>
                                 <include reference="mdV-rm-nNf"/>
                                 <include reference="vUK-O1-Bh0"/>
@@ -627,93 +633,109 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="AppBackground" translatesAutoresizingMaskIntoConstraints="NO" id="jqR-et-Fn4">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="InteriorBar" translatesAutoresizingMaskIntoConstraints="NO" id="9L7-Q0-GRJ">
                                 <rect key="frame" x="0.0" y="80" width="375" height="30"/>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="64" width="375" height="30"/>
-                                </variation>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Settings" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pxc-fn-zxi">
-                                <rect key="frame" x="0.0" y="19" width="375" height="48"/>
-                                <fontDescription key="fontDescription" name="Lobster1.3" family="Lobster 1.3" pointSize="33"/>
-                                <color key="textColor" red="0.23137254900000001" green="0.10980392160000001" blue="0.054901960780000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="svO-ZL-93O">
-                                <rect key="frame" x="0.0" y="110" width="375" height="77"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AbD-L8-0sg">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cBN-QX-yjr">
-                                        <rect key="frame" x="0.0" y="75" width="375" height="2"/>
-                                        <color key="backgroundColor" red="0.82352941180000006" green="0.79215686269999996" blue="0.3294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </view>
-                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="x5N-D0-DbD">
-                                        <rect key="frame" x="302" y="23" width="51" height="31"/>
-                                        <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.11" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <color key="onTintColor" red="0.18039215689999999" green="0.062745098040000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <color key="thumbTintColor" red="0.87450980389999999" green="0.85490196080000003" blue="0.35686274509999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2jW-Qd-I6q">
+                                        <rect key="frame" x="0.0" y="187" width="375" height="77"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VMh-nj-nMh">
+                                                <rect key="frame" x="0.0" y="75" width="375" height="2"/>
+                                                <color key="backgroundColor" red="0.82352941180000006" green="0.79215686269999996" blue="0.3294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Price Per Cup:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dEW-uF-Yrj">
+                                                <rect key="frame" x="19" y="15" width="244" height="48"/>
+                                                <fontDescription key="fontDescription" name="Lobster1.3" family="Lobster 1.3" pointSize="25"/>
+                                                <color key="textColor" red="0.23137254900000001" green="0.10980392160000001" blue="0.054901960780000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minimumValue="1" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="3Gm-BW-qHB">
+                                                <rect key="frame" x="256" y="23" width="94" height="29"/>
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.11" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="tintColor" red="0.23137254900000001" green="0.10980392160000001" blue="0.054901960780000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="256" y="22" width="94" height="29"/>
+                                                </variation>
+                                                <connections>
+                                                    <action selector="cupPriceStepperPressed:" destination="BYZ-38-t0r" eventType="valueChanged" id="8Nj-kW-eZu"/>
+                                                </connections>
+                                            </stepper>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iYM-rQ-w2H">
+                                                <rect key="frame" x="165" y="15" width="70" height="48"/>
+                                                <fontDescription key="fontDescription" name="Lobster1.3" family="Lobster 1.3" pointSize="25"/>
+                                                <color key="textColor" red="0.23137254900000001" green="0.10980392160000001" blue="0.054901960780000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
                                         <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                            <rect key="frame" x="302" y="23" width="51" height="31"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="77"/>
                                         </variation>
-                                    </switch>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Except Tips:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1VQ-0o-bnm">
-                                        <rect key="frame" x="19" y="15" width="244" height="48"/>
-                                        <fontDescription key="fontDescription" name="Lobster1.3" family="Lobster 1.3" pointSize="25"/>
-                                        <color key="textColor" red="0.23137254900000001" green="0.10980392160000001" blue="0.054901960780000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="svO-ZL-93O">
+                                        <rect key="frame" x="0.0" y="110" width="375" height="77"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cBN-QX-yjr">
+                                                <rect key="frame" x="0.0" y="75" width="375" height="2"/>
+                                                <color key="backgroundColor" red="0.82352941180000006" green="0.79215686269999996" blue="0.3294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </view>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="x5N-D0-DbD">
+                                                <rect key="frame" x="302" y="23" width="51" height="31"/>
+                                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.11" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="onTintColor" red="0.18039215689999999" green="0.062745098040000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="thumbTintColor" red="0.87450980389999999" green="0.85490196080000003" blue="0.35686274509999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="302" y="23" width="51" height="31"/>
+                                                </variation>
+                                            </switch>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Except Tips:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1VQ-0o-bnm">
+                                                <rect key="frame" x="19" y="15" width="244" height="48"/>
+                                                <fontDescription key="fontDescription" name="Lobster1.3" family="Lobster 1.3" pointSize="25"/>
+                                                <color key="textColor" red="0.23137254900000001" green="0.10980392160000001" blue="0.054901960780000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="78" width="375" height="77"/>
+                                        </variation>
+                                    </view>
                                 </subviews>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="94" width="375" height="77"/>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="2jW-Qd-I6q"/>
+                                        <exclude reference="svO-ZL-93O"/>
+                                    </mask>
                                 </variation>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2jW-Qd-I6q">
-                                <rect key="frame" x="0.0" y="187" width="375" height="77"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VMh-nj-nMh">
-                                        <rect key="frame" x="0.0" y="75" width="375" height="2"/>
-                                        <color key="backgroundColor" red="0.82352941180000006" green="0.79215686269999996" blue="0.3294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Price Per Cup:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dEW-uF-Yrj">
-                                        <rect key="frame" x="19" y="15" width="244" height="48"/>
-                                        <fontDescription key="fontDescription" name="Lobster1.3" family="Lobster 1.3" pointSize="25"/>
-                                        <color key="textColor" red="0.23137254900000001" green="0.10980392160000001" blue="0.054901960780000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minimumValue="1" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="3Gm-BW-qHB">
-                                        <rect key="frame" x="256" y="23" width="94" height="29"/>
-                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.11" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <color key="tintColor" red="0.23137254900000001" green="0.10980392160000001" blue="0.054901960780000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                            <rect key="frame" x="256" y="22" width="94" height="29"/>
-                                        </variation>
-                                        <connections>
-                                            <action selector="cupPriceStepperPressed:" destination="BYZ-38-t0r" eventType="valueChanged" id="8Nj-kW-eZu"/>
-                                        </connections>
-                                    </stepper>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iYM-rQ-w2H">
-                                        <rect key="frame" x="165" y="15" width="70" height="48"/>
-                                        <fontDescription key="fontDescription" name="Lobster1.3" family="Lobster 1.3" pointSize="25"/>
-                                        <color key="textColor" red="0.23137254900000001" green="0.10980392160000001" blue="0.054901960780000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="171" width="375" height="77"/>
+                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="0.0" y="30" width="400" height="368"/>
+                                    <mask key="subviews">
+                                        <include reference="2jW-Qd-I6q"/>
+                                        <include reference="svO-ZL-93O"/>
+                                    </mask>
                                 </variation>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W5W-ce-V8E">
                                 <rect key="frame" x="63" y="317" width="248" height="34"/>
                                 <color key="backgroundColor" red="0.24313725489999999" green="0.086274509799999996" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="dCI-1L-0Rl"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Lobster1.3" family="Lobster 1.3" pointSize="22"/>
                                 <state key="normal" title="Restart Game">
                                     <color key="titleColor" red="0.94117647059999998" green="0.90980392160000001" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="16" y="301" width="338" height="42"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="dCI-1L-0Rl"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="dCI-1L-0Rl"/>
+                                    </mask>
                                 </variation>
                                 <connections>
                                     <action selector="resetGameButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZsS-B1-0Bw"/>
@@ -721,7 +743,56 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.94117647059999998" green="0.90980392160000001" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="AbD-L8-0sg" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="4b1-iS-V3Q"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="9L7-Q0-GRJ" secondAttribute="trailing" constant="-16" id="7ty-Qp-cUr"/>
+                            <constraint firstItem="9L7-Q0-GRJ" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="GbQ-c0-SFO"/>
+                            <constraint firstItem="W5W-ce-V8E" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="M1R-OA-wgQ"/>
+                            <constraint firstItem="W5W-ce-V8E" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="Pn5-9R-wcJ"/>
+                            <constraint firstItem="9L7-Q0-GRJ" firstAttribute="top" secondItem="Sbd-Gl-QQR" secondAttribute="bottom" id="dR7-bd-YVl"/>
+                            <constraint firstItem="AbD-L8-0sg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="dcn-Ba-8tN"/>
+                            <constraint firstItem="E7S-tz-p2W" firstAttribute="top" secondItem="W5W-ce-V8E" secondAttribute="bottom" constant="114" id="hl3-fe-acN"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="AbD-L8-0sg" secondAttribute="trailing" constant="-16" id="lm7-Ba-tpp"/>
+                            <constraint firstItem="9L7-Q0-GRJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="oaY-EM-5QE"/>
+                            <constraint firstItem="AbD-L8-0sg" firstAttribute="top" secondItem="Sbd-Gl-QQR" secondAttribute="bottom" constant="30" id="zsA-8D-wSG"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="AbD-L8-0sg"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="7ty-Qp-cUr"/>
+                                <exclude reference="GbQ-c0-SFO"/>
+                                <exclude reference="dR7-bd-YVl"/>
+                                <exclude reference="oaY-EM-5QE"/>
+                                <exclude reference="4b1-iS-V3Q"/>
+                                <exclude reference="dcn-Ba-8tN"/>
+                                <exclude reference="lm7-Ba-tpp"/>
+                                <exclude reference="zsA-8D-wSG"/>
+                                <exclude reference="M1R-OA-wgQ"/>
+                                <exclude reference="Pn5-9R-wcJ"/>
+                                <exclude reference="hl3-fe-acN"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="AbD-L8-0sg"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="7ty-Qp-cUr"/>
+                                <include reference="GbQ-c0-SFO"/>
+                                <include reference="dR7-bd-YVl"/>
+                                <include reference="oaY-EM-5QE"/>
+                                <include reference="4b1-iS-V3Q"/>
+                                <include reference="dcn-Ba-8tN"/>
+                                <include reference="lm7-Ba-tpp"/>
+                                <include reference="zsA-8D-wSG"/>
+                                <include reference="M1R-OA-wgQ"/>
+                                <include reference="Pn5-9R-wcJ"/>
+                                <include reference="hl3-fe-acN"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="59s-ey-Jk5"/>
                     <connections>
@@ -740,7 +811,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="EFc-zS-Zbx" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="giW-Id-cxP">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="giW-Id-cxP">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.94117647059999998" green="0.90980392160000001" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -766,7 +837,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vwn-hq-qlF" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="J8x-6M-CrA">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="J8x-6M-CrA">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.94117647059999998" green="0.90980392160000001" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -785,7 +856,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="AppBackground" width="375" height="667"/>
         <image name="HUDBackground" width="378" height="91"/>
         <image name="IconCalendar" width="48" height="48"/>
         <image name="IconIceCube" width="53" height="47"/>
