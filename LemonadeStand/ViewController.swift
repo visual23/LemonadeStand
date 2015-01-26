@@ -87,6 +87,7 @@ class ViewController: UIViewController, DailyStatsViewControllerDelegate, Settin
     var totalCustomers = 0;
     
     var todaysEarnings : Float = 0
+    var expenses : Float = 0
     
     var gameStatus = "active"
     
@@ -113,7 +114,7 @@ class ViewController: UIViewController, DailyStatsViewControllerDelegate, Settin
         
         self.startDayButton.layer.cornerRadius = 5
         
-        resources.setStartUpAssets()
+        resources.setStartUpFunds()
         currentWeather.checkWeather()
         updateHUD()
         
@@ -151,7 +152,8 @@ class ViewController: UIViewController, DailyStatsViewControllerDelegate, Settin
     
     func dailyStatsVCDidFinish(controller: DailyStatsViewController, restartGame: Bool, statsExceptTips: Bool) {
         // Check to see if we need to set up a new day or start a new game
-        
+        println("dailyStatsVCDidFinish called")
+        println("restartGame = \(restartGame)")
         if !restartGame {
             self.setUpNewDay()
         }
@@ -177,9 +179,6 @@ class ViewController: UIViewController, DailyStatsViewControllerDelegate, Settin
             let dailyStatsVS = (segue.destinationViewController as UINavigationController).topViewController as DailyStatsViewController
             
             dailyStatsVS.gameStatus = gameStatus
-            dailyStatsVS.money = 0;
-            dailyStatsVS.lemons = 0;
-            dailyStatsVS.iceCubes = 0;
             dailyStatsVS.currentDay = currentDay
             dailyStatsVS.weather = currentWeather.weather
             dailyStatsVS.todaysTemperature = currentWeather.currentTemperature
@@ -188,8 +187,10 @@ class ViewController: UIViewController, DailyStatsViewControllerDelegate, Settin
             dailyStatsVS.cupsSold = cupsSold
             dailyStatsVS.tips = todaysTips
             dailyStatsVS.expenses = (Float(currentMix.lemons) * lemonPrice) + (Float(currentMix.iceCubes) * iceCubesPrice)
-            dailyStatsVS.profit = todaysEarnings - dailyStatsVS.expenses
+            dailyStatsVS.profit = ((Float(cupsSold) * cupPrice) + todaysTips) - expenses
             dailyStatsVS.exceptTips = exceptTips
+            println("todaysEarnings = \(todaysEarnings)")
+            println("expenses = \((Float(currentMix.lemons) * lemonPrice) + (Float(currentMix.iceCubes) * iceCubesPrice))")
             println("Tracing total \(totalCustomers) customers today.")
             
             dailyStatsVS.dailyStatsDelegate = self
@@ -214,101 +215,47 @@ class ViewController: UIViewController, DailyStatsViewControllerDelegate, Settin
     
     // Button Actions
     @IBAction func storeLemonMinusButtonPressed(sender: UIButton) {
-        if resources.lemons > 1 {
-            resources.lemons -= 1
-            basket.lemons -= 1
-            resources.money += lemonPrice
-            updateHUDLabels()
-            updateStoreLabels()
-            
-            pulseIcon(self.storeIconLemon);
-            
-            if basket.lemons == 0 {
-                storeLemonsMinusButton.enabled = false
-                storeLemonsPlusButton.enabled = true
-            }
-            else {
-                storeLemonsMinusButton.enabled = true
-                storeLemonsPlusButton.enabled = true
-            }
-        }
-        else {
-            storeLemonsMinusButton.enabled = false
-        }
+        resources.lemons -= 1
+        basket.lemons -= 1
+        resources.money += lemonPrice
+        updateHUDLabels()
+        updateStoreLabels()
+        updateMixLabels()
+        
+        pulseIcon(self.storeIconLemon);
     }
     
     @IBAction func storeLemonPlusButtonPressed(sender: UIButton) {
-        if resources.money > 0{
-            resources.lemons += 1
-            basket.lemons += 1
-            resources.money -= lemonPrice
-            updateHUDLabels()
-            updateStoreLabels()
-            
-            pulseIcon(self.storeIconLemon);
-            
-            if resources.money == 0 {
-                storeLemonsPlusButton.enabled = false
-                storeLemonsMinusButton.enabled = true
-            }
-            else {
-                storeLemonsPlusButton.enabled = true
-                storeLemonsMinusButton.enabled = true
-            }
-        }
+        resources.lemons += 1
+        basket.lemons += 1
+        resources.money -= lemonPrice
+        updateHUDLabels()
+        updateStoreLabels()
+        updateMixLabels()
         
-        else {
-            storeLemonsPlusButton.enabled = false
-        }
+        pulseIcon(self.storeIconLemon);
     }
     
     @IBAction func storeIceCubesMinusButtonPressed(sender: UIButton) {
-        if resources.iceCubes > 1 {
-            resources.iceCubes -= 1
-            basket.iceCubes -= 1
-            resources.money += iceCubesPrice
-            updateHUDLabels()
-            updateStoreLabels()
-            
-            pulseIcon(self.storeIconIceCubes);
-            
-            if resources.iceCubes == 1 {
-                storeIceCubesMinusButton.enabled = false
-                storeIceCubesPlusButton.enabled = true
-            }
-            else {
-                storeIceCubesMinusButton.enabled = true
-                storeIceCubesPlusButton.enabled = true
-            }
-        }
-        else {
-            storeIceCubesMinusButton.enabled = false
-        }
+        resources.iceCubes -= 1
+        basket.iceCubes -= 1
+        resources.money += iceCubesPrice
+        updateHUDLabels()
+        updateStoreLabels()
+        updateMixLabels()
+        
+        pulseIcon(self.storeIconIceCubes);
     }
     
     @IBAction func storeIceCubesPlusButtonPressed(sender: UIButton) {
-        if resources.money > 0{
-            resources.iceCubes += 1
-            basket.iceCubes += 1
-            resources.money -= iceCubesPrice
-            updateHUDLabels()
-            updateStoreLabels()
-            
-            pulseIcon(self.storeIconIceCubes);
-            
-            if resources.money == 0 {
-                storeIceCubesPlusButton.enabled = false
-                storeIceCubesMinusButton.enabled = true
-            }
-            else {
-                storeIceCubesPlusButton.enabled = true
-                storeIceCubesMinusButton.enabled = true
-            }
-        }
-            
-        else {
-            storeIceCubesPlusButton.enabled = false
-        }
+        resources.iceCubes += 1
+        basket.iceCubes += 1
+        resources.money -= iceCubesPrice
+        updateHUDLabels()
+        updateStoreLabels()
+        updateMixLabels()
+        
+        pulseIcon(self.storeIconIceCubes);
         
     }
     
@@ -361,6 +308,9 @@ class ViewController: UIViewController, DailyStatsViewControllerDelegate, Settin
         // Mix the lemonade
         currentMix.makeLemonade()
         
+        // set expenses
+        expenses = (Float(currentMix.lemons) * lemonPrice) + (Float(currentMix.iceCubes) * iceCubesPrice)
+        
         if currentMix.isAcidic {
             println("The lemonade today is bitter")
         }
@@ -383,13 +333,14 @@ class ViewController: UIViewController, DailyStatsViewControllerDelegate, Settin
         for var i = 0; i < totalCustomers; ++i {
             if currentMix.isAcidic && customers[i].favorsAcidicLemonade {
                 println("Customer \(i) likes acidic lemonade and paid")
-                todaysEarnings += cupPrice
+                //todaysEarnings = Float(todaysEarnings) + cupPrice
+                //println("todaysEarnings = \(todaysEarnings)")
                 
                 // Get tip
                 if exceptTips {
                     var tipAmount : Float = self.calulateTip(customers[i])
                     todaysTips += Float(tipAmount)
-                    todaysEarnings = Float(todaysEarnings) + Float(tipAmount)
+                    //todaysEarnings = (Float(todaysEarnings) + Float(tipAmount))
                 }
                 
                 cupsSold += 1
@@ -397,26 +348,28 @@ class ViewController: UIViewController, DailyStatsViewControllerDelegate, Settin
             else if currentMix.isEqualParts && customers[i].favorsEqualPartsLemonade {
                 println("Customer \(i) likes equal parts lemonade and paid")
                 
-                todaysEarnings += cupPrice
+                //todaysEarnings = Float(todaysEarnings) + cupPrice
+                //println("todaysEarnings = \(todaysEarnings)")
                 
                 // Get tip
                 if exceptTips {
                     var tipAmount : Float = self.calulateTip(customers[i])
                     todaysTips += Float(tipAmount)
-                    todaysEarnings = Float(todaysEarnings) + Float(tipAmount)
+                    //todaysEarnings = (Float(todaysEarnings) + Float(tipAmount))
                 }
                 
                 cupsSold += 1
             }
             else if currentMix.isDiluted && customers[i].favorsDilutedLemonade {
                 println("Customer \(i) likes diluted lemonade and paid")
-                todaysEarnings += cupPrice
+                //Float(todaysEarnings) + cupPrice
+                //println("todaysEarnings = \(todaysEarnings)")
                 
                 // Get tip
                 if exceptTips {
                     var tipAmount : Float = self.calulateTip(customers[i])
                     todaysTips += Float(tipAmount)
-                    todaysEarnings = Float(todaysEarnings) + Float(tipAmount)
+                    //todaysEarnings = (Float(todaysEarnings) + Float(tipAmount))
                 }
                 
                 cupsSold += 1
@@ -424,7 +377,30 @@ class ViewController: UIViewController, DailyStatsViewControllerDelegate, Settin
             else {
                 println("Customer \(i) didn't like the lemonade mix today and walked away.")
             }
-            println("todaysTips = \(todaysTips)")
+            
+        }
+        if (Float(cupsSold) * cupPrice) >= expenses {
+            println("You made a profit")
+            todaysEarnings = ((Float(cupsSold) * cupPrice) + todaysTips) - expenses
+        }
+        else {
+            todaysEarnings = todaysTips
+        }
+        
+        println("cupsSold = \(cupsSold)")
+        println("todaysEarnings = \(todaysEarnings)")
+        println("expenses = \(expenses)")
+        println("todaysTips = \(todaysTips)")
+        
+        println("// resources.money = \(resources.money)")
+        println("// resources.lemons = \(resources.lemons)")
+
+        //resources.money = 1
+        //resources.lemons = 0
+        // check to see if the game is over gameStatus
+        if resources.money <= 2 && resources.lemons == 0  {
+            println("GAME OVER")
+            gameStatus = "over"
         }
     }
     
@@ -483,18 +459,117 @@ class ViewController: UIViewController, DailyStatsViewControllerDelegate, Settin
     func updateStoreLabels() {
         storeLemonsSelected.text = "\(basket.lemons)"
         storeIceCubesSelected.text = "\(basket.iceCubes)"
+        
+        if basket.lemons <= 0 {
+            storeLemonsMinusButton.enabled = true
+        } else {
+            storeLemonsMinusButton.enabled = false
+        }
+        
+        if basket.lemons >= 0 {
+            storeLemonsMinusButton.enabled = true
+        } else {
+            storeLemonsMinusButton.enabled = false
+        }
+        
+        if basket.lemons == 0 {
+            storeLemonsMinusButton.enabled = false
+        } else {
+            storeLemonsMinusButton.enabled = true
+        }
+        
+        println("resources.money = \(resources.money)")
+        println("lemonPrice = \(lemonPrice)")
+        if resources.money < lemonPrice {
+            storeLemonsPlusButton.enabled = false
+        } else {
+            storeLemonsPlusButton.enabled = true
+        }
+        
+        
+        
+        
+        if basket.iceCubes <= 0 {
+            storeIceCubesMinusButton.enabled = true
+        } else {
+            storeIceCubesMinusButton.enabled = false
+        }
+        
+        if basket.iceCubes >= 0 {
+            storeIceCubesMinusButton.enabled = true
+        } else {
+            storeIceCubesMinusButton.enabled = false
+        }
+        
+        if basket.iceCubes == 0 {
+            storeIceCubesMinusButton.enabled = false
+        } else {
+            storeIceCubesMinusButton.enabled = true
+        }
+        
+        if resources.money < iceCubesPrice {
+            storeIceCubesPlusButton.enabled = false
+        } else {
+            storeIceCubesPlusButton.enabled = true
+        }
     }
     
     func updateMixLabels() {
         mixLemonsSelected.text = "\(currentMix.lemons)"
         mixIceCubesSelected.text = "\(currentMix.iceCubes)"
+        
+        
+        // Lemons
+        if resources.lemons > 0 {
+           mixLemonsPlusButton.enabled = true
+        } else {
+           mixLemonsPlusButton.enabled = false
+        }
+        
+        if resources.lemons == currentMix.lemons {
+            mixLemonsPlusButton.enabled = false
+        } else {
+            mixLemonsPlusButton.enabled = true
+        }
+        
+        if resources.lemons == 0 && currentMix.lemons >= 0  {
+            mixLemonsPlusButton.enabled = false
+        } else {
+            mixLemonsPlusButton.enabled = true
+        }
+        
+        if currentMix.lemons > 0  {
+            mixLemonsMinusButton.enabled = true
+        } else {
+            mixLemonsMinusButton.enabled = false
+        }
+        
+        // Ice Cubes
+        if resources.iceCubes > 0 {
+            mixIceCubesPlusButton.enabled = true
+        } else {
+            mixIceCubesPlusButton.enabled = false
+        }
+        
+        if resources.iceCubes == currentMix.iceCubes {
+            mixIceCubesPlusButton.enabled = false
+        } else {
+            mixIceCubesPlusButton.enabled = true
+        }
+        
+        if resources.iceCubes == 0 && currentMix.iceCubes >= 0  {
+            mixIceCubesPlusButton.enabled = false
+        } else {
+            mixIceCubesPlusButton.enabled = true
+        }
+        
+        if currentMix.iceCubes > 0  {
+            mixIceCubesMinusButton.enabled = true
+        } else {
+            mixIceCubesMinusButton.enabled = false
+        }
+        
     }
-    
-    func displayAlertMessage(alertTitle:NSString, alertDescription:NSString) -> Void {
-        let errorAlert = UIAlertView(title:alertTitle, message:alertDescription, delegate:nil, cancelButtonTitle:"OK")
-        errorAlert.show()
-    }
-    
     
     func setUpNewDay() {
         println("Setting up a new day")
@@ -508,24 +583,16 @@ class ViewController: UIViewController, DailyStatsViewControllerDelegate, Settin
         cupsSold = 0
         
         // Add todays earnings
-        println("todaysEarnings new day = \(Double(todaysEarnings))")
         resources.money += todaysEarnings
+        
+        // clear todaysEarnings 
+        todaysEarnings = 0
         
         // Reset supplies and mix
         basket.lemons = 0
         basket.iceCubes = 0
         currentMix.lemons = 0
         currentMix.iceCubes = 0
-        
-        storeLemonsMinusButton.enabled = false
-        storeIceCubesMinusButton.enabled = false
-        storeLemonsPlusButton.enabled = true
-        storeIceCubesPlusButton.enabled = true
-        
-        mixLemonsMinusButton.enabled = false
-        mixIceCubesMinusButton.enabled = false
-        mixLemonsPlusButton.enabled = true
-        mixIceCubesPlusButton.enabled = true
         
         updateStoreLabels()
         updateMixLabels()
@@ -536,26 +603,10 @@ class ViewController: UIViewController, DailyStatsViewControllerDelegate, Settin
     
     func setUpNewGame() {
         println("Setting up a new game")
-        
-
-        resources.setStartUpAssets()
+        gameStatus = "active"
+        resources.setStartUpFunds()
         currentWeather.checkWeather()
-        updateHUD()
-
         
-        storeLemonsMinusButton.enabled = false
-        storeIceCubesMinusButton.enabled = false
-        storeLemonsPlusButton.enabled = true
-        storeIceCubesPlusButton.enabled = true
-        
-        mixLemonsMinusButton.enabled = false
-        mixIceCubesMinusButton.enabled = false
-        mixLemonsPlusButton.enabled = true
-        mixIceCubesPlusButton.enabled = true
-        
-        resources.money = 10
-        resources.lemons = 1
-        resources.iceCubes = 1
         basket.lemons = 0
         basket.iceCubes = 0
         currentMix.lemons = 0
@@ -564,13 +615,7 @@ class ViewController: UIViewController, DailyStatsViewControllerDelegate, Settin
         
         updateStoreLabels()
         updateMixLabels()
+        updateHUD()
     }
-
-    
-    
-    
-    
-    
-
 }
 

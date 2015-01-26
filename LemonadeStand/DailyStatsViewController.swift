@@ -65,7 +65,7 @@ class DailyStatsViewController: UIViewController, UITableViewDataSource, UITable
 
         self.returnToGameButton.layer.cornerRadius = 5
         if gameStatus == "active" {
-            returnToGameButton.setTitle("Start A New Day", forState: UIControlState.Normal)
+            returnToGameButton.setTitle("Start Day \(currentDay + 1)", forState: UIControlState.Normal)
         }
         else {
             returnToGameButton.setTitle("Start A New Game", forState: UIControlState.Normal)
@@ -85,7 +85,12 @@ class DailyStatsViewController: UIViewController, UITableViewDataSource, UITable
     }
     
     @IBAction func returnToGameButtonPressed(sender: UIButton) {
-        restartGame = true
+        
+        if gameStatus == "over" {
+            restartGame = true
+        }
+        
+        dailyStatsDelegate!.dailyStatsVCDidFinish(self, restartGame: restartGame, statsExceptTips: exceptTips)
     }
     
     func setUpStats() {
@@ -104,6 +109,8 @@ class DailyStatsViewController: UIViewController, UITableViewDataSource, UITable
         }
         
         println("weatherIcon = \(weatherIcon)")
+        
+        var stats0 = Stats(iconImage: "IconBrownCalendar", stat: "Game Over!")
         
         var stats1 = Stats(iconImage: "IconBrownCalendar", stat: "Day \(self.currentDay)")
         var stats2 = Stats(iconImage: "\(weatherIcon)", stat: "\(self.todaysWeatherDescription) at \(self.todaysTemperature)°")
@@ -126,33 +133,19 @@ class DailyStatsViewController: UIViewController, UITableViewDataSource, UITable
         var tipsConverted = NSString(format:"$%.2f", Float(self.tips))
         var stats5 = Stats(iconImage: "IconBrownTips", stat: "\(tipsConverted) In tips")
         
-        if !exceptTips{
-            // hide tips label and move up the 2 rows below it
-        }
-        else {
-            // hide tips label and move up the 2 rows below it
-            
-            
-        }
-        //returnToGameButton.layer.frame.origin.y = 400
-        //CGRect! btFrame = self.returnToGameButton.frame
-        //self.returnToGameButton.frame.origin.x = 0
-        //self.returnToGameButton.frame.origin.y = 400
-
-        //self.returnToGameButton.frame = self.returnToGameButton.frame
-        
         var expensesConverted = NSString(format:"$%.2f", Float(self.expenses))
         var stats6  = Stats(iconImage: "IconBrownExpenses", stat: "\(expensesConverted) Spent on expenses")
         
         var stats7 : Stats
         var profitConverted = NSString(format:"$%.2f", Float(self.profit))
         
-        if self.profit <= 0 {
-            stats7 = Stats(iconImage: "IconBrownProfit", stat: "\(profitConverted) Loss for today")
-        }
-        else {
+        //if self.profit <= 0 {
+            //stats7 = Stats(iconImage: "IconBrownProfit", stat: "\(profitConverted) Loss for today")
+        //}
+        //else {
             stats7 = Stats(iconImage: "IconBrownProfit", stat: "\(profitConverted) Profit for today")
-        }
+        //}
+        
         
         arrayOfStats.append(stats1)
         arrayOfStats.append(stats2)
@@ -161,10 +154,18 @@ class DailyStatsViewController: UIViewController, UITableViewDataSource, UITable
         if exceptTips{
             arrayOfStats.append(stats5)
         }
-        
-        
         arrayOfStats.append(stats6)
         arrayOfStats.append(stats7)
+        
+        // if game is over, show alert
+        if gameStatus == "over" {
+            let alert = UIAlertView()
+            alert.title = "GAME OVER!"
+            alert.message = "You don't have enough money or lemons to go another day. Please restart the game."
+            alert.addButtonWithTitle("Ok")
+            alert.show()
+        }
+        
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -197,5 +198,4 @@ class DailyStatsViewController: UIViewController, UITableViewDataSource, UITable
             self.weatherImage.image = UIImage(named: "IconBrownMild")
         }
     }
-    
 }

@@ -17,8 +17,6 @@ class SettingsViewController: UIViewController {
     
     var settingsDelegate:SettingsViewControllerDelegate? = nil
 
-    
-    @IBOutlet weak var settingsBackButton: UIButton!
     @IBOutlet weak var tipsSwitch: UISwitch!
     @IBOutlet weak var resetGameButton: UIButton!
     @IBOutlet weak var cupPriceLabel: UILabel!
@@ -47,29 +45,30 @@ class SettingsViewController: UIViewController {
         
         var cupPriceConverted = NSString(format:"$%.2f", cupPrice)
         cupPriceLabel.text = "\(cupPriceConverted)"
-        
     }    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-   
+  
     func tipsSwitchStateChanged(switchState: UISwitch) {
         if switchState.on {
             println("The Switch is On")
             exceptTips = true
+            settingsDelegate!.settingsVCDidFinish(self, settingsRestartGame: false, settingsCupPrice: cupPrice, settingsExceptTips: true)
         } else {
             println("The Switch is Off")
             exceptTips = false
+            settingsDelegate!.settingsVCDidFinish(self, settingsRestartGame: false, settingsCupPrice: cupPrice, settingsExceptTips: false)
         }
         
         println("exceptTips = \(exceptTips)")
     }
-    
+
     @IBAction func resetGameButtonPressed(sender: UIButton) {
-        restartGame = true
+        self.restartGame = true
+        self.settingsDelegate!.settingsVCDidFinish(self, settingsRestartGame: self.restartGame, settingsCupPrice: self.cupPrice, settingsExceptTips: self.exceptTips)
     }
     
     @IBAction func cupPriceStepperPressed(sender: UIStepper) {
@@ -78,13 +77,8 @@ class SettingsViewController: UIViewController {
         var senderValue = sender.value
         self.cupPrice = Float(senderValue)
         
+        settingsDelegate!.settingsVCDidFinish(self, settingsRestartGame: false, settingsCupPrice: cupPrice, settingsExceptTips: exceptTips)
+        
        cupPriceLabel.text = "\(cupPriceConverted)"
     }
-    
-    @IBAction func settingsBackButtonPressed(sender: UIButton) {
-        settingsDelegate!.settingsVCDidFinish(self, settingsRestartGame: restartGame, settingsCupPrice: cupPrice, settingsExceptTips: exceptTips)
-    }
-    
-    
-    
 }

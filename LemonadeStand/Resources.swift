@@ -14,7 +14,7 @@ class Resources {
     var lemons = 0
     var iceCubes = 0
     
-    func setStartUpAssets() {
+    func setStartUpFunds() {
         money = 10
         lemons = 1
         iceCubes = 1
